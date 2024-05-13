@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .book-image {
+        max-width: 100px;
+        max-height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Book Table</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Book Title</th>
+          <th>Book Author</th>
+          <th>Book Publisher</th>
+          <th>Book Image</th>
+          <th>Book Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in books %}
+          <tr>
+            <td>{{ book.bookTitle }}</td>
+            <td>{{ book.bookAuthor }}</td>
+            <td>{{ book.bookPublisher }}</td>
+            <td>
+              <img class="book-image" src="{{ book.bookImage }}" alt="{{ book.bookTitle }}" />
+            </td>
+            <td>{{ book.bookDescription }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
